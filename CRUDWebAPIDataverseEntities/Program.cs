@@ -1,4 +1,6 @@
 
+using CRUDWebAPIDataverseEntities.Services.Dataverse;
+
 namespace CRUDWebAPIDataverseEntities
 {
     public class Program
@@ -8,6 +10,8 @@ namespace CRUDWebAPIDataverseEntities
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            // Register IServiceGlobalRequest and its implementation
+            builder.Services.AddScoped<IDataversePrcSectorsService, DataversePrcSectorsService>();
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
